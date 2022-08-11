@@ -1,0 +1,129 @@
+body {
+  padding: 0px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-img-details {
+  height: 400px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+#categories-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#login-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  margin-top: 80px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 00px 00px 20px #646060;
+  z-index: 999;
+  /* border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 2, 192); */
+}
+
+#body-container {
+  /* background-color: rgb(165, 178, 190); */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  /* border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 2, 192); */
+  justify-content: center;
+  vertical-align: baseline;
+  align-items: center;
+}
+
+#nav-container {
+  display: flex;
+  vertical-align: baseline;
+  justify-content: flex-end;
+  width: 100%;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  height: 10%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(252, 117, 7);
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: 90vh;
+  /* border-width: 3px;
+  border-style: solid;
+  border-color: rgb(13, 186, 255); */
+}
+
+#listings-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  /* border-width: 3px;
+  border-style: solid;
+  border-color: yellowgreen; */
+}
+
+.bi {
+  color: teal;
+  font-size: 12px;
+}
+
+h3 .bi {
+  color: rgb(43, 43, 43);
+  font-size: 18px;
+}
+
+form textarea {
+  resize: none;
+  width: 100%;
+}
+
+.comments {
+  width: 100%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(243, 151, 13);
+}
+
+#bidbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#id_amount {
+  color: blue;
+  width: 100px;
+}
+
+.alert {
+  width: 100%;
+}

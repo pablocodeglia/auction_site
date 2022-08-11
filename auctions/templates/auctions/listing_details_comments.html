@@ -1,0 +1,28 @@
+
+    <div class="card" style="margin-top: 20px; width: 100%;">
+        <div class="card-header">
+            <h3>Comments <i class="bi bi-chat-left-text-fill"></i> </h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div>
+                    Say Something
+                    <form method="post">
+                        {% csrf_token %}
+                        <div align="right" style="align-items: right; width: 100%; padding: 0px">
+                            {{commentForm.comment}}
+                            <input type="submit" class="btn btn-secondary" name="comment-button" value="Comment">
+                        </div>
+                    </form>
+                </div>
+            </li>
+                {% if comments %}
+                {% for comment in comments%}
+                <li class="list-group-item">
+                <p>{{comment.commenter | title}} said on {{comment.comment_timestamp | date:'Y-m-d'}}<Br>
+                {{comment.comment}}</p>
+            </li>
+                {% endfor %}
+                {% endif %}
+        </ul>
+    </div>

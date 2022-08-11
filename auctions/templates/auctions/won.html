@@ -1,0 +1,32 @@
+
+{% extends "auctions/layout.html" %}
+{% block title %}Won Listings{% endblock %}
+{% block body %}    
+
+    <div id="main-container">
+        <h2>Won Listings</h2>
+        <div id="listings-details-container">
+        {% for listing in won_items %}
+            <div class="card" style="width: 250px; margin: 10px;">
+                <img class="card-img-top" src="{{listing.img_url}}" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">{{listing.title}}</h5>
+                <p class="card-text">{{listing.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><small class="text-muted">Auction by <strong>{{listing.owner}}</strong></small></li>
+                <li class="list-group-item">Current price: <strong>${{listing.current_price}}</strong></li>
+                </ul>
+                <div class="card-body">
+                <a href="details/{{listing.id}}" class="card-link">Details</a>
+                </div>
+            </div>
+        {% empty %}
+        <div style="margin-top: 100px; font-weight: lighter; font-size:larger; color: grey;">
+            Looks like you haven't won anything yet!
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

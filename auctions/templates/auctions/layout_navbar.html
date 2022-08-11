@@ -1,0 +1,62 @@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" style="color:orange;margin-right:25px;">CSBay</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse row justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+            </li>
+            <li class="nav-link">|</li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-link">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'watchlist' %}">Watchlist</a>
+            </li>
+            <li class="nav-link">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'won' %}">Won Listings</a>
+            </li>
+            <li class="nav-link">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'my_listings' %}">My Listings</a>
+            </li>
+            <li class="nav-link">|</li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'new' %}">Add Listing</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            {% endif %}
+            
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+        </ul>
+        <ul class="navbar-nav align-self-end" style="color: white;">
+            <li class="nav-item active" style="margin-right:20px;" >
+                    {% if user.is_authenticated %}
+                    Welcome back, <strong>{{ user.username | title }}</strong>.
+                    {% else %}
+                    Not signed in.
+                    {% endif %}
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary btn-sm" style="margin: 0px 20px 0px 0px" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                {% endif %}
+
+        </ul>
+    </div>
+    </nav>
